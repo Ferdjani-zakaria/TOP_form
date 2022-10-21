@@ -1,0 +1,213 @@
+/* General Styles */
+* {
+  box-sizing: border-box;
+}
+
+html,
+button,
+input,
+select,
+textarea {
+  font-family: "Source Sans Pro", Helvetica, sans-serif;
+  color: #666;
+}
+
+button,
+input,
+select {
+  font-size: 1rem;
+  margin: 0;
+  max-width: 100%;
+  vertical-align: baseline;
+}
+
+input {
+  outline: none;
+}
+
+/* Layout Stuff */
+
+.register-section {
+  width: 100%;
+  max-width: 760px;
+  margin: 30px auto;
+}
+
+h1 {
+  padding: 15px;
+  margin: 0;
+}
+
+#registerForm {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#registerForm > [class^="register-form"],
+#registerForm > .form-submit {
+  position: relative;
+  min-height: 1px;
+  padding: 15px;
+  width: 100%;
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+
+@media (min-width: 600px) {
+  #registerForm > .register-form-firstName,
+  #registerForm > .register-form-lastName,
+  #registerForm > .register-form-email,
+  #registerForm > .register-form-phone,
+  #registerForm > .register-form-password {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
+
+/* Form Stuff */
+#registerform input[type="text"],
+#registerform input[type="email"],
+#registerform input[type="tel"],
+#registerform input[type="password"] {
+  background-color: #fff;
+  border: 1px solid #d8d8d8;
+  padding: 24px 10px 12px;
+  font-size: 1rem;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"] {
+  background-color: #fff;
+  padding: 24px 10px 12px;
+  font-size: 1rem;
+  width: 100%;
+  transition: all 0.5s ease-in-out;
+}
+
+:focus {
+  outline: 0;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="password"]:focus {
+  background-color: #fff;
+}
+
+/*Animations*/
+
+@keyframes silo-fade {
+  0% {
+    opacity: 0;
+    transform: translateY(-1.4em);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes silo-help {
+  0% {
+    opacity: 0;
+  }
+  4% {
+    opacity: 0;
+  }
+  5% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/* Label styles */
+#registerForm label {
+  padding: 5px 0;
+  font-size: 0.75rem;
+  display: none;
+  position: absolute;
+  top: 15px;
+  left: 26px;
+  color: #8bc34a;
+  animation: silo-fade 0.2s;
+  max-width: 80%;
+}
+
+#registerForm label:has(+ input:focus),
+#registerForm label:has(+ input[required]:valid),
+#registerForm label:has(+ input:not(:placeholder-shown)) {
+  display: block;
+}
+
+#registerForm input:invalid {
+  border: 1px solid #b92326;
+  background-color: rgba(185, 35, 38, 0.25);
+}
+
+#registerForm input:focus:invalid {
+  background-color: transparent;
+  border: 1px solid #b92326;
+}
+
+#registerForm #password:not(:placeholder-shown):invalid{
+    padding-top: 35px;
+  }
+#registerForm #password:focus:invalid{
+    padding-top: 35px;
+}
+
+#registerForm label:has(+ input:invalid) {
+  color: #b92326;
+}
+#registerForm label:has(+ input:focus:invalid):after {
+  content: " (" attr(data-help) ")";
+  animation: silo-help 100s;
+}
+#registerForm label:has(+ input:invalid):after {
+  content: " (" attr(data-help) ")";
+}
+
+#registerForm input:valid {
+  border: 1px solid #8bc34a;
+  background-color: rgba(139, 195, 74, 0.25);
+}
+#registerForm input:focus:valid {
+  border: 1px solid #8bc34a;
+  background-color: transparent;
+}
+
+#registerForm label:has(+ input:valid) {
+  color: #8bc34a;
+}
+#registerForm input:placeholder-shown {
+  background-color: transparent;
+  border: 1px solid #d8d8d8;
+}
+#registerForm input::placeholder {
+  color: #d8d8d8;
+}
+#registerForm input:focus::placeholder {
+  color: transparent;
+}
+
+/* button style */
+
+#registerForm input[type="submit"] {
+  background-color: transparent;
+  border: 1px solid #8bc34a;
+  color: #8bc34a;
+  padding: 5px 15px;
+  font-size: 1rem;
+  margin: 15px auto;
+  /* vertical-align: middle; */
+  display: block;
+  cursor: pointer;
+}
+#registerForm input[type="submit"]:hover {
+  background-color: rgba(139, 195, 74, 0.25);
+  border: 1px solid #8bc34a;
+}
