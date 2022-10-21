@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Generic form</title>
+  </head>
+  <body>
+    <div class="register-section">
+      <h1>Welcome to my fake registration page</h1>
+      <form id="registerForm" class="register-form" action="#">
+        <div class="register-form-firstName">
+          <label
+            for="firstName"
+            data-help="Do not use numbers or symbols please"
+            >First Name</label
+          >
+          <input
+            id="firstName"
+            name="firstName"
+            type="text"
+            placeholder="First name *"
+            value=""
+            size="30"
+            maxlength="245"
+            pattern="^[^(\d@$!%*#?&;:,<>)]+$"
+            required
+          />
+        </div>
+        <div class="register-form-lastName">
+          <label for="lastName" data-help="Do not use numbers or symbols please"
+            >Last name</label
+          >
+          <input
+            id="lastName"
+            name="lastName"
+            type="text"
+            placeholder="Last name *"
+            value=""
+            size="30"
+            maxlength="245"
+            pattern="^[^(\d@$!%*#?&;:,<>)]+$"
+            required
+          />
+        </div>
+        <div class="register-form-email">
+          <label for="email" data-help="email@email.com">Email</label>
+          <input
+            id="email"
+            name="email"
+            type="email"
+            placeholder="email *"
+            value=""
+            size="30"
+            maxlength="245"
+            required
+          />
+        </div>
+        <div class="register-form-phone">
+          <label for="phone" data-help="ex: XXXX-XX-XX-XX"
+            >Phone number</label
+          >
+          <input
+            id="phone"
+            name="phone"
+            type="tel"
+            placeholder="Phone number"
+            value=""
+            size="30"
+            pattern="[0-9]{4}[0-9]{2}[0-9]{2}[0-9]{2}"
+          />
+        </div>
+
+        <div class="register-form-password">
+          <label for="password" data-help="Min 8 characters with one number and one upper-case"
+            >Password</label
+          >
+          <input
+            id="password"
+            name="password"
+            type="password"
+            placeholder="password *"
+            value=""
+            minlength="8"
+            size="30"
+            pattern="^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)[A-Za-z\d@$!%*#?&]{8,}$"
+            required
+          />
+        </div>
+
+        <div class="register-form-password">
+          <label
+            for="passwordConfirm"
+            data-help="Should match the first password"
+            >Password</label
+          >
+          <input
+            id="passwordConfirm"
+            name="passwordConfirm"
+            type="password"
+            placeholder="Confirm password *"
+            value=""
+            minlength="8"
+            size="30"
+            pattern="^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)[A-Za-z\d@$!%*#?&]{8,}$"
+            required
+          />
+        </div>
+        <div class="form-submit">
+          <input
+            id="submit"
+            name="submit"
+            type="submit"
+            class="submit"
+            value="Join us"
+          />
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
