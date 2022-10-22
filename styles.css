@@ -36,6 +36,11 @@ img{
   vertical-align: middle;
 }
 
+a{
+  text-decoration: none;
+  font-weight: 600;
+}
+
 /* Layout Stuff */
 
 .register-section {
@@ -54,6 +59,7 @@ h1 {
 .register-photo{
   display: none;
   width: 50%;
+  position: relative;
 }
 
 .register-photo > img {
@@ -61,6 +67,7 @@ h1 {
 }
 
 .register-form-container{
+  margin-top: 5vh;
   width: 100%;
   min-height: 80vh;
   display: flex;
@@ -95,16 +102,20 @@ h1 {
     flex: 0 0 50%;
     max-width: 50%;
   }
+  .register-form-container{
+    margin-top: 0;
+  }
+
   .register-photo{
     display: block;
   }
 }
 
 /* Form */
-#registerform input[type="text"],
-#registerform input[type="email"],
-#registerform input[type="tel"],
-#registerform input[type="password"] {
+#registerForm input[type="text"],
+#registerForm input[type="email"],
+#registerForm input[type="tel"],
+#registerForm input[type="password"] {
   background-color: #fff;
   border: 1px solid #b3b3b3;
   padding: 24px 10px 12px;
@@ -132,6 +143,21 @@ input[type="tel"]:focus,
 input[type="password"]:focus {
   background-color: #fff;
 }
+
+#registerForm  p{
+  padding: 15px;
+}
+
+.register-photo p{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  left: 10px;
+  color: black;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
 
 /*Animations*/
 
